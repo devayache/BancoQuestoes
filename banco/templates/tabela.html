@@ -23,27 +23,47 @@
                     </tr>
                 </thead>
                 <tbody>
-                {% for questao in questoes %}
+                {% for questao in questao %}
                     <tr>
                         <th scope="row">{{questao.id}}</th>
-                        <td>{{db.nome}}</td>
-                        <td>{{db.segmento}}</td>
-                        <td>{{db.ano}}</td>
-                        <td>{{db.area}}</td>
-                        <td>{{db.assunto}}</td>
-                        <td>{{db.nivel}}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
+                        <td>
+                            <a href="">
+                                {{questao.nome}}
+                            </a>
+                        </td>
+                        
+                        <td>{% if questao.segmento == 'F'%}
+                            Ensino Fundamental
+                        {% else %}
+                            Ensino Médio
+                        {% endif %}
+                        </td>
+                        <td>{% if questao.ano == '1'%}
+                                1º ano E.M.
+                            {% elif questao.ano == '2'%}
+                                2º ano E.M.
+                            {% elif questao.ano == '3'%}
+                                3º ano E.M.
+                            {% elif questao.ano == '6'%}
+                                6º ano
+                            {% elif questao.ano == '7'%}
+                                7º ano
+                            {% elif questao.ano == '8'%}
+                                8º ano
+                            {% elif questao.ano == '9'%}
+                                9º ano
+                            {% endif %}
+                        </td>
+                        <td>{{questao.area}}</td>
+                        <td>{{questao.assunto}}</td>
+                        <td>{% if questao.nivel == 'Fa'%}
+                                Fácil
+                            {% elif questao.nivel == 'Me'%}
+                                Médio
+                            {% else %}
+                                Difícil
+                            {% endif %}
+                        </td>
                     </tr>
                     </tbody>
                 {% endfor %}

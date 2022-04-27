@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
-from banco.models import Questoes
+from .models import Questoes
 # Create your views here.
 
 def index(request):
     return render(request, 'index.html')
 
-def cadastrarQuestoes(request):
+def cadastrar_questoes(request):
     if request.method == 'GET':
         return render(request,'cadQuestoes.html')
     elif request.method == 'POST':
@@ -15,11 +15,8 @@ def cadastrarQuestoes(request):
         texto = request.POST.get('texto')
         return render(request,'cadQuestoes.html')
 
-
 def tabela(request):
-    if request.method == 'GET':
-        questao = Questoes.objects.all()
-        return render(request, 'tabela.html', {'questao': questao})
-    
+    questao = Questoes.objects.all()
+    return render(request, 'tabela.html', {'questao':questao})
 
 

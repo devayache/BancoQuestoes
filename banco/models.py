@@ -24,3 +24,7 @@ class Questoes(models.Model):
     assunto = models.CharField(max_length=100)
     area = models.CharField(max_length=100)
     texto = models.TextField(max_length=1000)
+
+
+    def __str__(self) -> str:
+        return self.nome
