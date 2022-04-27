@@ -20,10 +20,11 @@ class Questoes(models.Model):
     nome = models.CharField(max_length=100)
     segmento = models.CharField(max_length=2, choices=segmento_choices, default="F")
     ano = models.CharField(max_length=2, choices=ano_choices, default="6")
-    nivel = models.CharField(max_length=2, choices=nivel_choices, default="Fa")
+    nivel = models.CharField(max_length=3, choices=nivel_choices, default="Fa")
     assunto = models.CharField(max_length=100)
     area = models.CharField(max_length=100)
     texto = models.TextField(max_length=1000)
+    status = models.BooleanField(default=True)
 
 
     def __str__(self) -> str:

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Questoes
+from .forms import QuestoesForm
 # Create your views here.
 
 def index(request):
@@ -9,11 +10,10 @@ def cadastrar_questoes(request):
     if request.method == 'GET':
         return render(request,'cadQuestoes.html')
     elif request.method == 'POST':
-        nome = request.POST.get('nome')
-        assunto = request.POST.get('assunto')
-        area = request.POST.get('area')
-        texto = request.POST.get('texto')
-        return render(request,'cadQuestoes.html')
+        form = QuestoesForm(request.POST)
+        if form.is_valid():
+            nova_questoes = form.save()
+        return redirect('tabela')
 
 def tabela(request):
     questao = Questoes.objects.all()

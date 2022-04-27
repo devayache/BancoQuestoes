@@ -5,6 +5,7 @@
 {% block head %}
 <link rel="stylesheet" href="{% static 'banco/css/index.css' %}">
 <link rel="stylesheet" href="{% static 'banco/css/tabela.css' %}">
+<script src="https://kit.fontawesome.com/e5a4dcafd0.js" crossorigin="anonymous"></script>
 {% endblock %}
 
 {% block body %}
@@ -21,25 +22,26 @@
                         <th scope="col">Área</th>
                         <th scope="col">Assunto</th>
                         <th scope="col">Nível</th>
+                        <th scope="col">Ação</th>
                     </tr>
                 </thead>
                 <tbody>
                 {% for questao in questao %}
                     <tr>
                         <th scope="row">{{questao.id}}</th>
-                        <td>
+                        <td class="centralizar">
                             <a class="link-tabela" href="">
                                 {{questao.nome}}
                             </a>
                         </td>
                         
-                        <td>{% if questao.segmento == 'F'%}
+                        <td class="centralizar">{% if questao.segmento == 'F'%}
                             Ensino Fundamental
                         {% else %}
                             Ensino Médio
                         {% endif %}
                         </td>
-                        <td>{% if questao.ano == '1'%}
+                        <td class="centralizar">{% if questao.ano == '1'%}
                                 1º ano E.M.
                             {% elif questao.ano == '2'%}
                                 2º ano E.M.
@@ -55,15 +57,23 @@
                                 9º ano
                             {% endif %}
                         </td>
-                        <td>{{questao.area}}</td>
-                        <td>{{questao.assunto}}</td>
-                        <td>{% if questao.nivel == 'Fa'%}
+                        <td class="centralizar">{{questao.area}}</td>
+                        <td class="centralizar">{{questao.assunto}}</td>
+                        <td class="centralizar">{% if questao.nivel == 'Fa'%}
                                 Fácil
                             {% elif questao.nivel == 'Me'%}
                                 Médio
                             {% else %}
                                 Difícil
                             {% endif %}
+                        </td>
+                        <td>
+                            <ul>
+                                <li class="limpar">
+                                    <span><i class="fas fa-edit"></i></span>
+                                    <span><i class="fas fa-trash"></i></span>
+                                </li>
+                            </ul>
                         </td>
                     </tr>
                     </tbody>

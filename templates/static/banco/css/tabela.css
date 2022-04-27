@@ -6,3 +6,24 @@
 .link-tabela:hover{
     color: rgb(100, 200, 60);
 }
+
+
+.limpar {
+    list-style: none;
+}
+
+th {
+    text-align: center;
+}
+
+.centralizar{
+    text-align: center;
+}
+
+.fa-edit{
+    color: green;
+}
+
+.fa-trash {
+    color: red;
+}

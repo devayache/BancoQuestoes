@@ -10,14 +10,14 @@
 {% block body %}
 <body class="fundo">
     <div class="container pt-4">
-        <form>
+        <form method="post" action="{% url 'cadastrar_questoes' %}" >{% csrf_token %}
             <h1 class="titulo" font-degrade borda-bottom-degrade>Cadastre as questões</h1>
             <br>
             <div class="row">
                 <div class="col">
                     <span class="span-descricao">Nome:</span>
                     <br>
-                    <input type="text" class="form-control" name="assunto">
+                    <input type="text" class="form-control" name="nome">
                 </div>
                 <div class="col">
                     <span class="span-descricao">Segmento:</span>
@@ -46,7 +46,7 @@
                 <div class="col">
                     <span class="span-descricao">Nível</span>
                     <br>
-                    <select name="" id="" class="custom-select">
+                    <select name="nivel" id="" class="custom-select">
                         <option value="Fa">Fácil</option>
                         <option value="Me">Médio</option>
                         <option value="De">Difícil</option>
