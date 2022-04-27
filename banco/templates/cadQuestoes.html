@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Home {% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'banco/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'banco/css/cadQuestoes.css'%}">
+{% endblock %}
+
+{% block body %}
+<body class="fundo">
+    <div class="container pt-4">
+        <form>
+            <h1 class="titulo" font-degrade borda-bottom-degrade>Cadastre as questões</h1>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <span class="span-descricao">Nome:</span>
+                    <br>
+                    <input type="text" class="form-control" name="assunto">
+                </div>
+                <div class="col">
+                    <span class="span-descricao">Segmento:</span>
+                    <br>
+                    <select name="segmento" id="" class="custom-select">
+                        <option value="F">Ensino Fundamental</option>
+                        <option value="M">Ensino Médio</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <span class="span-descricao">Ano:</span>
+                    <br>
+                    <select name="ano" id="" class="custom-select">
+                        <option value="6">6º ano E.F.</option>
+                        <option value="7">7º ano E.F.</option>
+                        <option value="8">8º ano E.F.</option>
+                        <option value="9">9º ano E.F.</option>
+                        <option value="1">1º ano E.M.</option>
+                        <option value="2">2º ano E.M.</option>
+                        <option value="3">3º ano E.M.</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <span class="span-descricao">Nível</span>
+                    <br>
+                    <select name="" id="" class="custom-select">
+                        <option value="Fa">Fácil</option>
+                        <option value="Me">Médio</option>
+                        <option value="De">Difícil</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <span class="span-descricao">Assunto</span>
+                    <br>
+                    <input type="text" class="form-control" name="assunto">
+                    <br>
+                </div>
+                <div class="col">
+                    <span class="span-descricao">Área</span>
+                    <input type="text" class="form-control" name="area">
+                    <br>
+                </div>
+            </div>
+            <span class="span-descricao">Texto</span>
+            <br>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="texto" ></textarea>
+            <br>
+            <div class="mb-3">
+                <label for="formFile" class="form-label">Escolha um arquivo se houver:</label>
+                <input class="form-control" type="file" id="formFile">
+            </div>
+            <br>
+            <a href="{% url 'index'%}" class="btn btn-danger btn-lg">Voltar</a>
+            <input type="submit" value="Cadastrar" class="btn btn-success btn-lg">
+            
+        </form>
+    </div>
+</body>
+{% endblock %}
