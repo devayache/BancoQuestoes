@@ -7,3 +7,5 @@ def index(request):
 def cadQuestoes(request):
     pass
 
+def teste(request):
+    return render(request, 'teste.html')

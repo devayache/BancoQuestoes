@@ -3,11 +3,17 @@
 
 {% block title %} Home {% endblock %}
 {% block head %}
-
-<link rel="stylesheet" href="{% static 'banco/css/banco.css' %}">
-
+<link rel="stylesheet" href="{% static 'banco/css/index.css' %}">
 {% endblock %}
 
 {% block body %}
-<h1>Olá Mundo</h1>
+<div class="box">
+    <form>
+        <h1 class="titulo font-degrade borda-bottom-degrade">Selecione um opção</h2>
+
+        <input  type="submit" value="CADASTRAR" class="btn btn-success btn-lg">
+        <a href="#" class="btn btn-primary btn-lg">LOGIN</a> 
+    </form>
+        
+</div>
 {% endblock %}
