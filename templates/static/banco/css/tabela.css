@@ -1,0 +1,8 @@
+.link-tabela{
+    text-decoration: none;
+    color: black;
+}
+
+.link-tabela:hover{
+    color: rgb(100, 200, 60);
+}

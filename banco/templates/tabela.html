@@ -4,6 +4,7 @@
 {% block title %} Home {% endblock %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'banco/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'banco/css/tabela.css' %}">
 {% endblock %}
 
 {% block body %}
@@ -27,7 +28,7 @@
                     <tr>
                         <th scope="row">{{questao.id}}</th>
                         <td>
-                            <a href="">
+                            <a class="link-tabela" href="">
                                 {{questao.nome}}
                             </a>
                         </td>
